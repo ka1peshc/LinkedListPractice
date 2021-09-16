@@ -6,7 +6,11 @@ namespace LinkedListPractice
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            LinkedList linklist = new LinkedList();
+            linklist.Add(56);
+            linklist.Add(30);
+            linklist.Add(70);
+            linklist.Display();
         }
     }
 }
