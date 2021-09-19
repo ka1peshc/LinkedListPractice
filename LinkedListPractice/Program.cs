@@ -20,6 +20,7 @@ namespace LinkedListPractice
             linklist.Display();
             linklist.PopTail();
             linklist.Display();
+            linklist.SearchData(30);
         }
     }
 }

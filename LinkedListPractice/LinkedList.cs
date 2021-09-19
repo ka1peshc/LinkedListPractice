@@ -126,5 +126,36 @@ namespace LinkedListPractice
             
         }
 
+        internal void SearchData(int data)
+        {
+            int position=1;
+            bool notFound = true;
+            if (this.head == null)
+            {
+                Console.WriteLine("Head is empty");
+            }
+            else if(this.head.data == data)
+            {
+                Console.WriteLine("Found {0} at Position {1}",data, position);
+                notFound = false;
+            }
+            else
+            {
+                while(head.next != null)
+                {
+                    if(head.data == data)
+                    {
+                        Console.WriteLine("Found {0} at Position {1}", data, position);
+                        notFound = false;
+                    }
+                    head = head.next;
+                }
+            }
+            if(notFound)
+            {
+                Console.WriteLine("404: {0} not found",data);
+            }
+        }
+
     }
 }
