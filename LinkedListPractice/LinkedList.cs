@@ -72,9 +72,12 @@ namespace LinkedListPractice
             Console.WriteLine("Inserted value is " + tempNode.data);
             return tempNode;
         }
+        /// <summary>
+        /// Display Node data fron head to tail
+        /// </summary>
         internal void Display()
         {
-            Console.WriteLine("head is :" + this.head.data);
+            //Console.WriteLine("head is :" + this.head.data);
             Node temp = this.head;
             if (temp == null)
             {
@@ -89,12 +92,39 @@ namespace LinkedListPractice
             Console.WriteLine("==============");
             
         }
-        internal void pophead()
+        /// <summary>
+        /// removes head.next link
+        /// </summary>
+        internal void Pophead()
         {
             Node tempNode = this.head;
             head = tempNode.next;
-            Console.WriteLine("poped head");
+            Console.WriteLine("Poped head Node");
         }
-        
+        /// <summary>
+        /// Removes tail node using 
+        /// </summary>
+        internal void PopTail()
+        {
+            if(this.head == null)
+            {
+                Console.WriteLine("Linkedlist is empty");
+            }
+            else if (this.head.next == null){
+                Console.WriteLine("Head is only Node");
+            }
+            else
+            {
+                Node tempNode = this.head;
+                while (tempNode.next.next != null)
+                {
+                    tempNode = tempNode.next;
+                }
+                tempNode.next = null;
+                Console.WriteLine("Poped Tail Node");
+            }
+            
+        }
+
     }
 }

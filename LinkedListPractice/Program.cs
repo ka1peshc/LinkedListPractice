@@ -16,9 +16,9 @@ namespace LinkedListPractice
             linklist.Display();
             linklist.AddInBetween(3, 100);
             linklist.Display();
-            linklist.pophead();
+            linklist.Pophead();
             linklist.Display();
-            linklist.popTailNode();
+            linklist.PopTail();
             linklist.Display();
         }
     }
