@@ -13,6 +13,7 @@ namespace LinkedListPractice
                     LinkedlistOperation.Operation();
                     break;
                 case 2:
+                    StackOperations.Operations();
                     break;
                 case 3:
                     break;
