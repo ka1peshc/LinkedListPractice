@@ -6,21 +6,18 @@ namespace LinkedListPractice
     {
         static void Main(string[] args)
         {
-            LinkedList<int> linklist = new LinkedList<int>();
-            linklist.Add(56);
-            linklist.Add(96);
-            //linklist.Add(30);
-            linklist.Add(70);
-            linklist.Display();
-            linklist.AddInBetween(2, 30);
-            linklist.Display();
-            linklist.AddInBetween(3, 100);
-            linklist.Display();
-            linklist.Pophead();
-            linklist.Display();
-            linklist.PopTail();
-            linklist.Display();
-            linklist.SearchData(30);
+            Console.WriteLine("Select option number\n1. Linked list\n2. Stack\n3. Queue");
+            int option = int.Parse(Console.ReadLine());
+            switch (option){
+                case 1:
+                    LinkedlistOperation.Operation();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+            }
+            
         }
     }
 }
