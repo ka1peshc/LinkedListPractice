@@ -12,7 +12,13 @@ namespace LinkedListPractice
             s.Push(10);
             s.Push(20);
             s.Push(30);
+            s.Push(40);
+            s.Push(50);
+            s.Push(60);
+            s.Push(70);
             s.DisplayStack();
+            s.IsEmpty();
+
         }
     }
 }
