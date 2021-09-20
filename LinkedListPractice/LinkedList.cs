@@ -4,16 +4,16 @@ using System.Text;
 
 namespace LinkedListPractice
 {
-    class LinkedList
+    class LinkedList<T> where T:IComparable
     {
-        internal Node head;
+        private Node<T> head;
         /// <summary>
-        /// Adding new node in linklist
+        /// Adding new Node<T> in linklist
         /// </summary>
         /// <param name="data"></param>
-        internal void Add(int data)
+        internal void Add(T data)
         {
-            Node node = new Node(data);
+            Node<T> node = new Node<T>(data);
             
             if (this.head == null)
             {
@@ -21,7 +21,7 @@ namespace LinkedListPractice
             }
             else
             {
-                Node temp = head;
+                Node<T> temp = head;
                 while (temp.next != null)
                 {
                     temp = temp.next;
@@ -35,10 +35,10 @@ namespace LinkedListPractice
         /// <param name="position"></param>
         /// <param name="data"></param>
         /// <returns></returns>
-        internal Node AddInBetween(int position, int data)
+        internal Node<T> AddInBetween(int position, T data)
         {
             //int index=1;
-            Node tempNode = this.head;
+            Node<T> tempNode = this.head;
             if (position < 1)
             {
                 Console.WriteLine("invalid position");
@@ -46,7 +46,7 @@ namespace LinkedListPractice
             }
             else if( position == 1)
             {
-                Node newNode = new Node(data);
+                Node<T> newNode = new Node<T>(data);
                 newNode.next = this.head;
                 head = newNode;
             }
@@ -57,7 +57,7 @@ namespace LinkedListPractice
                 {
                     if(position == 1)
                     {
-                        Node node = new Node(data);
+                        Node<T> node = new Node<T>(data);
                         node.next = tempNode.next;
                         tempNode.next = node;
                         break;
@@ -73,12 +73,12 @@ namespace LinkedListPractice
             return tempNode;
         }
         /// <summary>
-        /// Display Node data fron head to tail
+        /// Display Node<T> data fron head to tail
         /// </summary>
         internal void Display()
         {
             //Console.WriteLine("head is :" + this.head.data);
-            Node temp = this.head;
+            Node<T> temp = this.head;
             if (temp == null)
             {
                 Console.WriteLine("Linklist is empty");
@@ -97,7 +97,7 @@ namespace LinkedListPractice
         /// </summary>
         internal void Pophead()
         {
-            Node tempNode = this.head;
+            Node<T> tempNode = this.head;
             head = tempNode.next;
             Console.WriteLine("Poped head Node");
         }
@@ -115,7 +115,7 @@ namespace LinkedListPractice
             }
             else
             {
-                Node tempNode = this.head;
+                Node<T> tempNode = this.head;
                 while (tempNode.next.next != null)
                 {
                     tempNode = tempNode.next;
@@ -126,7 +126,7 @@ namespace LinkedListPractice
             
         }
 
-        internal void SearchData(int data)
+        internal void SearchData(T data)
         {
             int position=1;
             bool notFound = true;
@@ -134,7 +134,7 @@ namespace LinkedListPractice
             {
                 Console.WriteLine("Head is empty");
             }
-            else if(this.head.data == data)
+            else if(this.head.data.Equals(data))
             {
                 Console.WriteLine("Found {0} at Position {1}",data, position);
                 notFound = false;
@@ -143,7 +143,7 @@ namespace LinkedListPractice
             {
                 while(head.next != null)
                 {
-                    if(head.data == data)
+                    if(this.head.data.Equals(data))
                     {
                         Console.WriteLine("Found {0} at Position {1}", data, position);
                         notFound = false;

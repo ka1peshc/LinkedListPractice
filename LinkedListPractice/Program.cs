@@ -6,7 +6,7 @@ namespace LinkedListPractice
     {
         static void Main(string[] args)
         {
-            LinkedList linklist = new LinkedList();
+            LinkedList<int> linklist = new LinkedList<int>();
             linklist.Add(56);
             linklist.Add(96);
             //linklist.Add(30);
