@@ -16,6 +16,7 @@ namespace LinkedListPractice
                     StackOperations.Operations();
                     break;
                 case 3:
+                    QueueOperations.Operations();
                     break;
             }
             
